@@ -1,0 +1,39 @@
+import { Button, VerticalBox, TextEdit } from "std-widgets.slint";
+
+export component AppWindow inherits Window {
+    in-out property<string> links_text: "";
+    callback request_open_links(string);
+    
+    width: 300px;
+    height: 300px;
+    title: "Open Links";
+
+    
+    GridLayout {
+        spacing: 5px;
+        padding: 10px;
+        Row {
+        
+            Text {text: "Open Urls"; font-size: 20px; horizontal-alignment: center; }
+        }
+        Row {
+           linksTxt := TextEdit {
+                font-size: 14px;
+                width: 270px;
+                height: 210px;
+                
+                text: root.links_text;
+            }
+        }
+        Row {
+            Button { 
+                text: "Open Browser";
+                height: 30px; 
+                primary: true; 
+                
+                clicked => { request_open_links(linksTxt.text)}
+            }
+            
+        }
+    }
+}
