@@ -1,0 +1,21 @@
+[package]
+name = "open-links"
+version = "0.1.0"
+authors = ["Linargian Pratama <linargian00@gmail.com>"]
+edition = "2021"
+build = "build.rs"
+description = "a desktop app that open links to default browser"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+slint = "1.4"
+webbrowser = "0.8.12"
+
+[build-dependencies]
+slint-build = "1.4"
+
+[package.metadata.bundle]
+name = "open-links"
+identifier = "open-links"
+
